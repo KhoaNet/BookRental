@@ -1,0 +1,13 @@
+extends ./layout
+
+block content
+    #featured-3.container.px-4.py-5
+        h2.pb-2.border-bottom Books
+        .row.g-4.py-5.row-cols-1.row-cols-lg-3
+            each item in books
+                .feature.col
+                    img(src='#{item.coverImagePath}' style="width:200px;height:200px")
+                    h2 #{item.title}
+                    p #{item.description}
+                    a.icon-link(href='books/detail/#{item._id}')
+                        | Rental            
